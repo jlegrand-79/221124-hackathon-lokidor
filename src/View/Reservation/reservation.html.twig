@@ -1,0 +1,23 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+
+	{% include 'Reservation/_form.html.twig' %}
+	{% for expedition in expeditions %}
+
+		<div class="card" style="width: 18rem;">
+			<img src="/assets/images/{{ expedition.image }}" class="card-img-top">
+			<div class="card-body">
+				<h5 class="card-title">{{ expedition.planet_name }}</h5>
+				<p class="card-text">
+					Prix : {{ expedition.price }} $<br>
+                    Durée du voyage : {{ expedition.time }} jours<br>
+                    Date du départ : {{ expedition.date }}<br>
+                    Type de navette : {{ expedition.name }}
+				</p>
+				<a href="#" class="btn btn-primary">Réserver</a>
+			</div>
+		</div>
+
+	{% endfor %}
+{% endblock %}
