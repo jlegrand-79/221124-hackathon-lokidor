@@ -11,6 +11,13 @@ class DestinationController extends AbstractController
         $destinationManager = new DestinationManager();
         $destinations = $destinationManager->selectAll();
 
-        return $this->twig->render('Destination/destination.html.twig', ['destinations' => $destinations]);
+        return $this->twig->render('Destination/index.html.twig', ['destinations' => $destinations]);
+    }
+
+    public function show(int $id): string
+    {
+        $destinationManager = new DestinationManager();
+        $destination = $destinationManager->selectOneById($id);
+        return $this->twig->render('Destination/show.html.twig', ['destination' => $destination]);
     }
 }

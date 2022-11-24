@@ -19,5 +19,7 @@ return [
     // routes de Space Cruisings
     'shuttles' => ['ShuttleController', 'index',],
     'destinations' => ['DestinationController', 'getAllDestinations'],
-    'reservation' => ['ExpeditionController', 'getAllExpeditions']
+    'reservation' => ['ExpeditionController', 'getAllExpeditions'],
+    'destinations/show' => ['DestinationController', 'show', ['id']],
+    'shuttles/show' => ['ShuttleController', 'show', ['id']],
 ];

@@ -28,7 +28,7 @@ USE lokidor;
 
 CREATE TABLE destination (
   id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  name VARCHAR(255) NOT NULL,
+  planet_name VARCHAR(255) NOT NULL,
   type VARCHAR(255) NOT NULL,
   distance FLOAT NOT NULL,
   min_temperature INT NOT NULL,
@@ -55,19 +55,7 @@ picture
 VALUES
 ('SC-lightning-00','lightning',10,300000,'lightning.png'),
 ('SC-starship-00','starship',60,60000,'starship.png'),
-('SC-cargo-00','cargo',500,20000,'cargo.png'),
-('SC-lightning-01','lightning',15,350000,'lightning.png'),
-('SC-starship-01','starship',70,62000,'starship.png'),
-('SC-cargo-01','cargo',600,21000,'cargo.png'),
-('SC-lightning-02','lightning',12,280000,'lightning.png'),
-('SC-starship-02','starship',65,56000,'starship.png'),
-('SC-cargo-02','cargo',550,18000,'cargo.png'),
-('SC-lightning-03','lightning',18,305000,'lightning.png'),
-('SC-starship-03','starship',75,61000,'starship.png'),
-('SC-cargo-03','cargo',700,20200,'cargo.png'),
-('SC-lightning-04','lightning',20,292500,'lightning.png'),
-('SC-starship-04','starship',80,58500,'starship.png'),
-('SC-cargo-04','cargo',800,19500,'cargo.png');
+('SC-cargo-00','cargo',500,20000,'cargo.png');
 
 
 -- Distances à la terre
@@ -110,7 +98,7 @@ CREATE TABLE user (
 );
 
 INSERT INTO destination (
-  `name`,
+  planet_name,
   `type`,
   distance,
   min_temperature,
@@ -122,3 +110,22 @@ VALUES
   ('Mars', 'Planète', 56, -153, 20, 'mars.png'),
   ('La Lune', 'Satellite', 0.384, -150, 150, 'moon.png'),
   ('Venus', 'Planète', 40, 446, 490, 'venus.png');
+  
+  INSERT INTO expedition (
+  date,
+  time,
+  price,
+  shuttle_id,
+  destination_id
+  )
+  
+  VALUES
+  ('2699-05-04', 39, 50000, 1, 1),
+  ('2699-05-04', 13, 75000, 2, 1),
+  ('2699-05-04', 8, 100000, 3, 1),
+  ('2699-05-04', 28, 35000, 1, 3),
+  ('2699-05-04', 10, 50000, 2, 3),
+  ('2699-05-04', 6, 75000, 3, 3),
+  ('2699-05-04', 7, 20000, 1, 2),
+  ('2699-05-04', 2, 30000, 2, 2),
+  ('2699-05-04', 1, 50000, 3, 2);
