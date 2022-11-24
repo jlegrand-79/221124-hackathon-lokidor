@@ -17,6 +17,6 @@ return [
     'items/delete' => ['ItemController', 'delete',],
 
     // routes de Space Cruisings
-    'shuffles' => ['ShuttleController', 'index',],
+    'shuttles' => ['ShuttleController', 'index',],
     'destinations' => ['DestinationController', 'getAllDestinations'],
 ];

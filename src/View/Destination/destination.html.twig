@@ -9,14 +9,17 @@
 
 
 					<div class="card" style="width: 18rem;">
-						<img src="..." class="card-img-top" alt="...">
+						<img src="/assets/images/{{ destination.image }}" class="card-img-top" alt="{{ destination.name }}">
 						<div class="card-body">
 							<h5 class="card-title">{{ destination.name }}</h5>
 							<p class="card-text">
 								Type d'objet :{{ destination.type }}<br>
-								Distance par rapport à la terre :{{ destination.distance }} millions de km<br>
-								Température minmale :{{ destination.min_temperature }} °C<br>
-								Température maximale :{{ destination.max_temperature }} °C</p>
+								Distance par rapport à la terre :{{ destination.distance }}
+								millions de km<br>
+								Température minmale :{{ destination.min_temperature }}
+								°C<br>
+								Température maximale :{{ destination.max_temperature }}
+								°C</p>
 							<a href="#" class="btn btn-primary">Go somewhere</a>
 						</div>
 					</div>
