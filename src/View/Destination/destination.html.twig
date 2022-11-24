@@ -2,13 +2,13 @@
 
 {% block content %}
 
-	<table>
-		<tbody>
-			<tr>
+	<main class="d-flex align-items-center">
+		<div class="container">
+			<div class="row justify-content-center">
 				{% for destination in destinations %}
 
 
-					<div class="card" style="width: 18rem;">
+					<div class="card col-4 text-center" style="width: 18rem;">
 						<img src="/assets/images/{{ destination.image }}" class="card-img-top" alt="{{ destination.name }}">
 						<div class="card-body">
 							<h5 class="card-title">{{ destination.name }}</h5>
@@ -25,9 +25,8 @@
 					</div>
 
 				{% endfor %}
-
-			</tr>
-		</tbody>
-	</table>
+			</div>
+		</div>
+	</main>
 
 {% endblock %}
