@@ -7,5 +7,4 @@ use PDO;
 class ShuttleManager extends AbstractManager
 {
     public const TABLE = 'shuttle';
-
 }

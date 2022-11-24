@@ -30,8 +30,10 @@ CREATE TABLE destination (
   id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
   name VARCHAR(255) NOT NULL,
   type VARCHAR(255) NOT NULL,
-  distance INT NOT NULL,
-  temperature INT NOT NULL
+  distance FLOAT NOT NULL,
+  min_temperature INT NOT NULL,
+  max_temperature INT NOT NULL,
+  image VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE shuttle (
@@ -39,7 +41,7 @@ CREATE TABLE shuttle (
   name VARCHAR(255) NOT NULL,
   type VARCHAR(255) NOT NULL,
   seats INT NOT NULL,
-  speed INT NOT NULL,
+  speed FLOAT NOT NULL,
   picture VARCHAR(255) NOT NULL
 );
 
@@ -85,7 +87,7 @@ CREATE TABLE expedition (
   id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
   date DATE NOT NULL,
   time INT NOT NULL,
-  price INT NOT NULL,
+  price FLOAT NOT NULL,
   shuttle_id INT NOT NULL,
   destination_id INT NOT NULL,
   CONSTRAINT fk_expedition_shuttle
@@ -106,3 +108,17 @@ CREATE TABLE user (
     FOREIGN KEY (expedition_id)
     REFERENCES expedition(id)
 );
+
+INSERT INTO destination (
+  `name`,
+  `type`,
+  distance,
+  min_temperature,
+  max_temperature,
+  `image`
+  )
+
+VALUES
+  ('Mars', 'Planète', 56, -153, 20, 'mars.png'),
+  ('La Lune', 'Satellite', 0.384, -150, 150, 'moon.png'),
+  ('Venus', 'Planète', 40, 446, 490, 'venus.png');

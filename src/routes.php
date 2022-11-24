@@ -18,5 +18,5 @@ return [
 
     // routes de Space Cruisings
     'shuffles' => ['ShuttleController', 'index',],
-
+    'destinations' => ['DestinationController', 'getAllDestinations'],
 ];
