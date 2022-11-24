@@ -8,3 +8,7 @@ body {
     display: flex;
     justify-content: space-between;
 }
+
+.logo {
+max-width: 200px;
+}
