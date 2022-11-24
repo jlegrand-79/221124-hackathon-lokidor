@@ -39,14 +39,55 @@ CREATE TABLE shuttle (
   name VARCHAR(255) NOT NULL,
   type VARCHAR(255) NOT NULL,
   seats INT NOT NULL,
-  speed INT NOT NULL
+  speed INT NOT NULL,
+  picture VARCHAR(255) NOT NULL
 );
+
+INSERT INTO shuttle (
+name,
+type,
+seats,
+speed,
+picture
+)
+VALUES
+('SC-lightning-00','lightning',10,300000,'lightning.png'),
+('SC-starship-00','starship',60,60000,'starship.png'),
+('SC-cargo-00','cargo',500,20000,'cargo.png'),
+('SC-lightning-01','lightning',15,350000,'lightning.png'),
+('SC-starship-01','starship',70,62000,'starship.png'),
+('SC-cargo-01','cargo',600,21000,'cargo.png'),
+('SC-lightning-02','lightning',12,280000,'lightning.png'),
+('SC-starship-02','starship',65,56000,'starship.png'),
+('SC-cargo-02','cargo',550,18000,'cargo.png'),
+('SC-lightning-03','lightning',18,305000,'lightning.png'),
+('SC-starship-03','starship',75,61000,'starship.png'),
+('SC-cargo-03','cargo',700,20200,'cargo.png'),
+('SC-lightning-04','lightning',20,292500,'lightning.png'),
+('SC-starship-04','starship',80,58500,'starship.png'),
+('SC-cargo-04','cargo',800,19500,'cargo.png');
+
+
+-- Distances à la terre
+-- Lune : 384 400 km
+-- Venus : MIN 40 Millions km / MAX 260 Millions km / MOY 150 000 000 km
+-- Mars : MIN 56 Millions km / MAX 405 Millions km / MOY 230 500 000 km
+
+-- On choisit de ne garder que la valeur MIN pour nos calculs de vitesse et durée
+
+-- Note : vitesse de la lumière 300 000 m / s
+
+-- Vittesse éclair : 300 000 km/h
+-- Vitesse normale : 60 000 km/h
+-- Vitesse croisière : 20 000 km/h
 
 CREATE TABLE expedition (
   id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
   date DATE NOT NULL,
   time INT NOT NULL,
   price INT NOT NULL,
+  shuttle_id INT NOT NULL,
+  destination_id INT NOT NULL,
   CONSTRAINT fk_expedition_shuttle
     FOREIGN KEY (shuttle_id)
     REFERENCES shuttle(id),
@@ -60,7 +101,8 @@ CREATE TABLE user (
   firstname VARCHAR(255) NOT NULL,
   lastname VARCHAR(255) NOT NULL,
   email VARCHAR(255) NOT NULL,
+  expedition_id INT NOT NULL,
   CONSTRAINT fk_user_expedition
     FOREIGN KEY (expedition_id)
-    REFERENCES expedition(id),
+    REFERENCES expedition(id)
 );

@@ -1,0 +1,39 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+	<h1>Shuttles</h1>
+	<table>
+		<thead>
+			<th>Image</th>
+			<th>Nom</th>
+			<th>Type</th>
+			<th>Nombre de places</th>
+			<th>Vitesse (km/h)</th>
+			<th>lien</th>
+		</thead>
+		<tbody>
+			{% for shuttle in shuttles %}
+				<tr>
+					<td>
+						<img src="/assets/images/{{ shuttle.picture }}" width=200></td>
+					<td>{{shuttle.name}}</td>
+					<td>{{ shuttle.type }}</td>
+					<td>{{ shuttle.seats }}</td>
+					<td>{{ shuttle.speed }}</td>
+					<td>
+						<a href="/shuttles/show?id={{ shuttle.id }}">voir la fiche</a>
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td>Nothing to display</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+{% endblock %}
