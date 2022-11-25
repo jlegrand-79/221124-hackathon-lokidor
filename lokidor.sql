@@ -30,6 +30,7 @@ CREATE TABLE destination (
   id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
   planet_name VARCHAR(255) NOT NULL,
   type VARCHAR(255) NOT NULL,
+  description TEXT NOT NULL,
   distance FLOAT NOT NULL,
   min_temperature INT NOT NULL,
   max_temperature INT NOT NULL,
@@ -46,6 +47,7 @@ CREATE TABLE shuttle (
   picture VARCHAR(255) NOT NULL
 );
 
+
 INSERT INTO shuttle (
 name,
 type,
@@ -55,9 +57,9 @@ speed,
 picture
 )
 VALUES
-('SC-lightning-00','Lightning','Cette navette ultra mobile vous offrira la meilleure expérience de navigation grâce à des commandes simplifiées et une ergonomie sophistiquée', 10,300000,'lightning.png'),
-('SC-starship-00','Starship', 'Ce vaisseau a été conçu pour allier le meilleur du confort et de la performance de transport. A son bord, vous vivrez une expérience inoubliable !', 60, 60000,'starship.png'),
-('SC-cargo-00','Cargo', 'Ce monstre des océans intergalactiques vous permettra de profiter de divertissements qui vous feront oublier la longeur de votre trajet ! Spa de gluezccsq, projection de stankgfl et cocktails d\'ylnesst seront au programme d\'une croisière grand luxe all-inclusive !', 500, 20000,'cargo.png');
+('SC Lightning #84','Lightning','Cette navette ultra mobile vous offrira la meilleure expérience de navigation grâce à des commandes simplifiées et une ergonomie sophistiquée', 10,300000,'lightning.png'),
+('SC Starship #13','Starship', 'Ce vaisseau a été conçu pour allier le meilleur du confort et de la performance de transport. A son bord, vous vivrez une expérience inoubliable !', 60, 60000,'starship.png'),
+('SC Cargo #01','Cargo', 'Ce monstre des océans intergalactiques vous permettra de profiter de divertissements qui vous feront oublier la longeur de votre trajet ! Spa de gluezccsq, projection de stankgfl et cocktails d\'ylnesst seront au programme d\'une croisière grand luxe all-inclusive !', 500, 20000,'cargo.png');
 
 
 -- Distances à la terre
@@ -103,15 +105,16 @@ INSERT INTO destination (
   planet_name,
   `type`,
   distance,
+  description,
   min_temperature,
   max_temperature,
-  `image`
+  image
   )
-
 VALUES
-  ('Mars', 'Planète', 56, -153, 20, 'mars.png'),
-  ('La Lune', 'Satellite', 0.384, -150, 150, 'moon.png'),
-  ('Venus', 'Planète', 40, 446, 490, 'venus.png');
+  ('Mars', 'Planète', 56, 'N\’oubliez pas d\’emporter vos chaussures de randonnée. Vous en aurez besoin pour affronter Olympus Mons, la plus haute montagne planétaire de notre système solaire. C\’est deux fois et demie la taille de l‘Everest !', -153, 20, 'mars.png'),
+  ('La Lune', 'Satellite', 0.384, 'Découvrez notre planète comme vous ne l\’avez jamais vue. Un voyage de détente parfait pour aider à reprendre du recul et revenir rafraîchi. Pendant que vous y êtes, plongez dans l’histoire en visitant les sites d\’atterrissage de Luna 2 et d‘Apollo 11.', -150, 150, 'moon.png'),
+  ('Venus', 'Planète', 40, 'Venus est un chez-soi loin de chez soi (quelques centaines de degrés plus froid !). En prime, vous obtenez des vues saisissantes sur les anneaux de Saturne.', 446, 490,'venus.png');
+
   
   INSERT INTO expedition (
   date,
