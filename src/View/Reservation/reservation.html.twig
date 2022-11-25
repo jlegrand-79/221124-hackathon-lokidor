@@ -3,21 +3,20 @@
 {% block content %}
 
 	{% include 'Reservation/_form.html.twig' %}
-	{% for expedition in expeditions %}
+	<div class="mt-3">
+	<label class="form-label"></label>
+	<select name="travel" class="form-control">
+	<option value="">--Choisissez votre voyage--</option>
+		{% for expedition in expeditions %}
 
-		<div class="card" style="width: 18rem;">
-			<img src="/assets/images/{{ expedition.image }}" class="card-img-top">
-			<div class="card-body">
-				<h5 class="card-title">{{ expedition.planet_name }}</h5>
-				<p class="card-text">
-					Prix : {{ expedition.price }} $<br>
-                    Durée du voyage : {{ expedition.time }} jours<br>
-                    Date du départ : {{ expedition.date }}<br>
-                    Type de navette : {{ expedition.name }}
-				</p>
-				<a href="#" class="btn btn-primary">Réserver</a>
-			</div>
-		</div>
+			<option value="{{ expedition.planet_name }},{{ expedition.name }},{{ expedition.time }},{{ expedition.price }}">{{ expedition.planet_name }} | {{ expedition.name }} | {{ expedition.time }} jours | {{ expedition.price }} $</option>
 
-	{% endfor %}
+		{% endfor %}
+	</select>
+	<button class="btn btn-light mt-5">Réservez votre voyage</button>
+	</div>
+	</div>
+	</div>
+	</form>
 {% endblock %}
+
