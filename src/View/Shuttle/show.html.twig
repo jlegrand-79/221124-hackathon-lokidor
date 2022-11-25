@@ -1,18 +1,16 @@
 {% extends 'layout.html.twig' %}
-{% block title %}Navettes
+{% block title %}Nos navettes
 {% endblock %}
 
 {% block content %}
 	<div class="row m-3 text-light">
-		<h2>Navettes</h2>
+		<h2>{{shuttle.name}}</h2>
 	</div>
 	<div id="shuttle by id" class="container">
 		<div class="row">
 			<div class="col-lg-4">
 				<img src="/assets/images/{{ shuttle.picture }}" class="img-fluid m-2" role="img">
 			</img>
-			<p class="shuttle-name text-light">Nom :
-				{{ shuttle.name }}</p>
 			<p class="shuttle-type text-light">Type :
 				{{ shuttle.type }}</p>
 			<p class="shuttle-seats text-light">Nombre de sièges :

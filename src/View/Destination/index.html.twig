@@ -1,15 +1,14 @@
 {% extends 'layout.html.twig' %}
-{% block title %}Nos destinations
-{% endblock %}
 
 {% block content %}
 
 	<main class="d-flex align-items-center">
-		<div class="container">
+		<div class="container justify-content-center">
+			<h2 class="text-light">Nos destinations</h2>
 			<div class="row justify-content-center">
 				{% for destination in destinations %}
-					<div class="card col-4 text-center text-light bg-transparent m-3" style="width: 18rem;">
-						<img src="/assets/images/{{ destination.image }}" class="card-img-top p-3" alt="{{ destination.name }}">
+					<div class="card col-4 text-center text-light bg-transparent border-white m-4" style="width: 18rem;">
+						<img src="/assets/images/{{ destination.image }}" class="card-img-top p-3 img-fluid" alt="{{ destination.name }}">
 						<div class="card-body">
 							<h5 class="card-title">{{ destination.planet_name }}</h5>
 							<a class="btn btn-light" href="/destinations/show?id={{ destination.id }}">Découvrir</a>

@@ -1,19 +1,20 @@
 {% extends 'layout.html.twig' %}
-{% block title %}Nos navettes
-{% endblock %}
 
 {% block content %}
 
 	<main class="d-flex align-items-center">
 		<div class="container">
+			<h2 class="text-light">Nos navettes spatiales</h2>
 			<div class="row justify-content-center">
 				{% for shuttle in shuttles %}
-					<div class="card col-4 text-center text-light bg-transparent m-3" style="width: 18rem;">
+					<div class="card col-4 text-center text-light bg-transparent border-white align-items-center m-4" style="width: 18rem;">
 						<img src="/assets/images/{{ shuttle.picture }}" class="card-img-top p-3" alt="{{ shuttle.name }}">
-						<div class="card-body">
-							<h5 class="card-title">{{ shuttle.name }}</h5>
-							<a class="btn btn-light" href="/shuttles/show?id={{ shuttle.id }}">Découvrir</a>
-						</div>
+						<footer class=>
+							<div class="card-body">
+								<h5 class="card-title">{{ shuttle.name }}</h5>
+								<a class="btn btn-light m-2" href="/shuttles/show?id={{ shuttle.id }}">Découvrir</a>
+							</div>
+						</footer>
 					</div>
 				{% endfor %}
 			</div>
