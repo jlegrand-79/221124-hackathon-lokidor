@@ -40,6 +40,7 @@ CREATE TABLE shuttle (
   id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
   name VARCHAR(255) NOT NULL,
   type VARCHAR(255) NOT NULL,
+  description text,
   seats INT NOT NULL,
   speed FLOAT NOT NULL,
   picture VARCHAR(255) NOT NULL
@@ -48,14 +49,15 @@ CREATE TABLE shuttle (
 INSERT INTO shuttle (
 name,
 type,
+description,
 seats,
 speed,
 picture
 )
 VALUES
-('SC-lightning-00','lightning',10,300000,'lightning.png'),
-('SC-starship-00','starship',60,60000,'starship.png'),
-('SC-cargo-00','cargo',500,20000,'cargo.png');
+('SC-lightning-00','Lightning','Cette navette ultra mobile vous offrira la meilleure expérience de navigation grâce à des commandes simplifiées et une ergonomie sophistiquée', 10,300000,'lightning.png'),
+('SC-starship-00','Starship', 'Ce vaisseau a été conçu pour allier le meilleur du confort et de la performance de transport. A son bord, vous vivrez une expérience inoubliable !', 60, 60000,'starship.png'),
+('SC-cargo-00','Cargo', 'Ce monstre des océans intergalactiques vous permettra de profiter de divertissements qui vous feront oublier la longeur de votre trajet ! Spa de gluezccsq, projection de stankgfl et cocktails d\'ylnesst seront au programme d\'une croisière grand luxe all-inclusive !', 500, 20000,'cargo.png');
 
 
 -- Distances à la terre
