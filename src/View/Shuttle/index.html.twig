@@ -8,21 +8,11 @@
 		<div class="container">
 			<div class="row justify-content-center">
 				{% for shuttle in shuttles %}
-					<div class="card col-4 text-center text-light bg-dark" style="width: 18rem;">
-						<div class="h-50 d-flex align-items-center">
-							<img src="/assets/images/{{ shuttle.picture }}" class="card-img-top p-3" alt="{{ shuttle.name }}">
-						</div>
+					<div class="card col-4 text-center text-light bg-transparent m-3" style="width: 18rem;">
+						<img src="/assets/images/{{ shuttle.picture }}" class="card-img-top p-3" alt="{{ shuttle.name }}">
 						<div class="card-body">
 							<h5 class="card-title">{{ shuttle.name }}</h5>
-							<p class="card-text">
-								Type de navette :
-								{{ shuttle.type }}<br>
-								Nombre de passagers :
-								{{ shuttle.seats }}<br>
-								Vitesse :
-								{{ shuttle.speed }}
-								km/h</p>
-							<a class="btn btn-light" href="/shuttles/show?id={{ shuttle.id }}">Plus de détails</a>
+							<a class="btn btn-light" href="/shuttles/show?id={{ shuttle.id }}">Découvrir</a>
 						</div>
 					</div>
 				{% endfor %}
